@@ -6,43 +6,27 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="js/bootstrap.js">
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="js/main.js">
-
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 	<section>
-		<div class= "boxuno">
 			<div class = "container">
 				<div class ="row">
-					<div class="col-md-12">
-						<div id="myDIV" class="header">
-  							<h2>TODO APP</h2>
-			    			<input type="text" id="myInput" placeholder="Title...">
-              	<span onclick="newElement()" class="addBtn">Add</span>
-        			</div>
-        		</div>
+					<div class="col-md-6">
+						<div class="todolist">
+  							<h1>TODO APP</h1>
+			    			<input type="text" id="todo" class="form-control" placeholder="Tareas ...">
+			    			<a href="" id="add" class="btn btn-success">Agregar</a>
+        				<hr>
+              	<ul id="todolist" class="list-unstyled"> 
+        		</ul>
 					</div>
+				</div>
 			</div>
 		</div>
 </section>
 
-<section>
-		<div class ="container">
-			<div class="row">
-				<div class="col-md-12">
-					<ul id="myUL">
-	  				<li>Ir al Supermercado</li>
-	  				<li class="checked">Pagar las Cuentas</li>
-	  				<li>Ir al Taller</li>
-  					<li></li>
-  					<li>Read a book</li>
-  					<li>Organize office</li>
-					</ul>
-				</div>
-			</div>
-</section>
-				
 </body>
 </html>

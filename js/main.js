@@ -1,55 +1,53 @@
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+window.addEventListener("load", init);
+
+var todos =[];
+
+function init(){
+  var add = document.querySelector("#add");
+  add.addEventListener("click", addTodo);
+ }
+
+function addTodo(event){
+  event.preventDefault();
+  if(document.querySelector("#todo").value ==="") return;
+
+  var li =
+  {
+    index: todos.length + 1,
+    value: document.querySelector("#todo").value
+  };
+  todos.push (li);
+  displayTodos (li);
 }
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+function displayTodos(li){
+  var node = document.createElement("li");
+  node.classList.add("col-md-12");
+  node.id = "todo" + li.index;
+
+  var textnode = document.createTextNode(li.value);
+  node.appenChild(textnode);
+  document.querySelector("#todoList").appenChild(node);
+  document.querySelector("#todo").value = "";
+
+  var deleteButton = createButton (li);
+  node.appenChild(deleteButton);
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+function createButton(li){
+  var todo = document.createElement("input");
+  todo.type = "button";
+  todo.style.marginTop = "12px";
+  todo.style.float = "right";
+  todo.value = "Eliminar";
+  todo.style.marginLeft = "15px";
+  todo.classList.add("removeTodo", "btn", "btn-danger");
+  todo.onclick = function()
+  {
+    var toDelete = document.querySelector('#todo'+li.index);
+    toDelete.parentNode.removeChild(toDelete);
+  };
+  
+  return todo;
 }
+
