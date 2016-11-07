@@ -1,8 +1,51 @@
+*{
+	box-sizing: border-box;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
 .todolist {
-    text-align: Center;
+	background-color: #995AAE;
+	height: 30%;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    color:white;
+    font-size: 5px;
+    padding: 10px 30px 5px;
+
 }
 
 #add {
     position: relative;
-    float:left;
+    float:center;
+    margin: 10px;
+}
+
+
+.tareas .lista {
+	list-style: none;
+	margin: 0 76px;
+	background-color: #E1D9F5;
+}
+
+.tareas .lista li {
+	border-bottom: 1px solid #B6B6B6;
+	padding-left:2px;
+	
+
+}
+
+.tareas .lista li a {
+	color:#212121;
+	display: block;
+	padding: 15px 0;
+	text-decoration: none;
+
+}
+
+.tareas .lista li a:hover {
+	text-decoration: line-through;
 }

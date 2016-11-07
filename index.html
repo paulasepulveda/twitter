@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="js/bootstrap.js">
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="js/main.js">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -14,19 +15,30 @@
 	<section>
 			<div class = "container">
 				<div class ="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="todolist">
   							<h1>TODO APP</h1>
 			    			<input type="text" id="todo" class="form-control" placeholder="Tareas ...">
-			    			<a href="" id="add" class="btn btn-success">Agregar</a>
-        				<hr>
-              	<ul id="todolist" class="list-unstyled"> 
-        		</ul>
+			    			<a href="" id="add" class="btn btn-success">Agregar Tarea</a>
+        		     	</div>
+        		    </div>
+				</div>
+			</div>
+			<div class="tareas">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="lista" id="lista">
+							<form>
+								<li><a href="#"><input type="checkbox">Comprar al Supermercado</a></li>
+    							<li><a href="#"><input type="checkbox">Pagar las Cuentas</a></li>
+								<li><a href="#"><input type="checkbox">Ir al Correr</a></li>
+								<li><a href="#"><input type="checkbox">Ordenar la oficina</a></li>
+							</form>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
-</section>
+	</section>
 
 </body>
 </html>
